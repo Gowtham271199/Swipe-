@@ -8,9 +8,10 @@ import EditableField from "./EditableField";
 const InvoiceItem = (props) => {
   const { onItemizedItemEdit, currency, onRowDel, items, onRowAdd } = props;
 
-  const itemTable = items.map((item) => (
+  // Check if items is an array and not empty
+  const itemTable = (Array.isArray(items) ? items : []).map((item) => (
     <ItemRow
-      key={item.id}
+      key={item.itemId}
       item={item}
       onDelEvent={onRowDel}
       onItemizedItemEdit={onItemizedItemEdit}
@@ -42,6 +43,7 @@ const ItemRow = (props) => {
   const onDelEvent = () => {
     props.onDelEvent(props.item);
   };
+
   return (
     <tr>
       <td style={{ width: "100%" }}>
@@ -96,7 +98,7 @@ const ItemRow = (props) => {
             name: "itemPrice",
             min: 1,
             step: "0.01",
-            presicion: 2,
+            precision: 2,
             textAlign: "text-end",
             value: props.item.itemPrice,
             id: props.item.itemId,

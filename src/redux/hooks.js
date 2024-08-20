@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux";
-import { selectInvoiceList } from "./invoicesSlice";
+// src/hooks/useInvoiceListData.js
+import { useSelector } from 'react-redux';
+import { selectInvoiceList } from '../redux/invoicesSlice'; // Adjust path if needed
 
 export const useInvoiceListData = () => {
   const invoiceList = useSelector(selectInvoiceList);
