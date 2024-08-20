@@ -1,7 +1,7 @@
 // src/components/ProductTab.js
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, updateProduct, deleteProduct } from "../redux/invoicesSlice";
+import {updateProduct, deleteProduct } from "../redux/invoicesSlice";
 import ProductForm from "./ProductForm";
 import { Button, Table } from "react-bootstrap";
 
